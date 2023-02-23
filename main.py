@@ -400,13 +400,16 @@ def upload_all_tables_data():
                     values += "-1"
                 # Checks if the value should be null
                 elif row[i] == '':
-                    values += "-1"
+                    values += "-1,"
                 # Checks if the value should be a string
                 elif i == 5:
                     values += "'" + row[i] + "',"
                 # Checks if it's the last value
                 elif i == len(row) - 1:
                     values += row[i]
+                # Removes bad data
+                elif i in range(77, 86):
+                    values += "NULL,"
                 # Adds a comma to the end of the value
                 else:
                     values += row[i] + ","
