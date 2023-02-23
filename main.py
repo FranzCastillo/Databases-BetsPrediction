@@ -23,14 +23,13 @@ def connect_to_database():
     return conn
 
 def success_table_creation(source):
-    print(f"The {source} table has been created successfully")
+    print(f"The following table has been created successfully: {source}")
 
 def success_table_truncation(source):
-    print(f"The {source} table has been truncated successfully")
+    print(f"The following table has been truncated successfully: {source}")
 
 def success_data_upload(source):
-    print(f"The {source} data has been uploaded successfully")
-
+    print(f"The following data has been uploaded successfully: {source}")
 
 def create_all_tables():
     cursor.execute('''
