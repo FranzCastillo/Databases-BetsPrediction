@@ -397,6 +397,9 @@ def upload_all_tables_data():
                 # Checks if the last value should be null
                 if row[i] == '' and i == len(row) - 1:
                     values += "-1"
+                # Checks the season column
+                elif i == 3:
+                    values += "'" + row[i] + "',"
                 # Checks if the value should be null
                 elif row[i] == '':
                     values += "-1,"
